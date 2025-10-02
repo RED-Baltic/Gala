@@ -33,15 +33,6 @@
     }
     .wrap { width: 100%; max-width: var(--container-width); }
 
-    .banner {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: var(--radius);
-      margin-bottom: 40px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
-    }
-
     header {
       display: flex;
       align-items: center;
@@ -68,12 +59,13 @@
       align-items: center;
       gap: 24px;
     }
-    .header-image {
-      max-height: 60px; /* Slightly larger logo */
-      max-width: 180px;
-      width: auto;
-      height: auto;
-      object-fit: contain;
+    .header-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      margin: 0;
+      text-align: center;
     }
     .lang-selector {
       position: relative;
@@ -526,9 +518,8 @@
         justify-content: center;
         position: relative;
       }
-      .header-image {
-        max-height: 48px;
-        max-width: 140px;
+      .header-title {
+        font-size: 1.5rem;
       }
       .header-left {
         position: absolute;
@@ -593,7 +584,7 @@
         </div>
       </div>
       <div class="header-center">
-        <img src="photo/redd.jpg" alt="Logo" class="header-image">
+        <h1 class="header-title">GalaShop</h1>
       </div>
       <div class="header-right">
         <div class="lang-selector">
@@ -607,8 +598,6 @@
     </header>
 
     <main>
-      <img src="photo/baner1.jpg" alt="Banner" class="banner">
-
       <div class="products-list" id="products-list"></div>
 
       <section class="panel">

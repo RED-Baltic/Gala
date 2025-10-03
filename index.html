@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>RED — Veikals / Grozs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&family=Playfair+Display:wght@600;700;800&family=Vladimir+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&family=Playfair+Display:wght@400;600;700;800&family=Vladimir+Script&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-light: #E8E3DB;
@@ -29,19 +29,28 @@
       -moz-osx-font-smoothing: grayscale;
       display: flex;
       justify-content: center;
-      padding: 60px 20px;
+      padding: 0 0 60px; /* Убрано padding-left и padding-right */
     }
-    .wrap { width: 100%; max-width: var(--container-width); }
+    .wrap { 
+      width: 100%; 
+      max-width: var(--container-width); 
+      margin: 0; /* Убраны отступы для полной ширины */
+    }
 
     .top-bar {
       background: #1F1F1F;
       color: white;
       font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      text-align: center;
-      padding: 12px 0;
+      font-size: 1.2rem; /* Уменьшено с 1.4rem */
+      font-weight: 400; /* Обычный шрифт вместо жирного */
+      text-align: left;
+      padding: 6px 0; /* Еще меньше по высоте */
       margin-bottom: 20px;
+      width: 100%;
+      position: relative;
+    }
+    .top-bar span {
+      margin-left: 20px; /* Отступ текста слева */
     }
 
     header {
@@ -54,6 +63,8 @@
       position: relative;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       padding-bottom: 16px;
+      padding-left: 20px; /* Восстановлен отступ для содержимого */
+      padding-right: 20px;
     }
     .header-left {
       display: flex;
@@ -224,8 +235,8 @@
     }
     .banner img {
       width: 100%;
-      max-height: 400px; /* Ограничение максимальной высоты */
-      aspect-ratio: 16 / 9; /* Сохранение пропорций баннера */
+      max-height: 400px;
+      aspect-ratio: 16 / 9;
       object-fit: cover;
       display: block;
     }
@@ -561,6 +572,8 @@
         gap: 12px;
         justify-content: center;
         padding-bottom: 12px;
+        padding-left: 12px;
+        padding-right: 12px;
       }
       .header-title {
         font-size: 2.4rem;
@@ -609,19 +622,22 @@
         height: 320px;
       }
       .banner img {
-        max-height: 250px; /* Уменьшено для мобильных */
+        max-height: 250px;
         aspect-ratio: 16 / 9;
       }
       .top-bar {
-        font-size: 1.2rem;
-        padding: 8px 0;
+        font-size: 0.9rem; /* Уменьшено с 1rem */
+        padding: 4px 0; /* Еще меньше по высоте */
+      }
+      .top-bar span {
+        margin-left: 12px; /* Меньший отступ текста слева */
       }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="top-bar">Welcome to the GalaShop</div>
+    <div class="top-bar"><span>Welcome to the GalaShop</span></div>
     <header>
       <div class="header-left">
         <div class="hamburger">
@@ -1207,4 +1223,3 @@
   </script>
 </body>
 </html>
-

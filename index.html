@@ -7,16 +7,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-light: #ffffff; /* Clean white background like Perigold */
-      --card-light: #ffffff; /* White for cards */
-      --card-dark: #f7f7f7; /* Subtle off-white for panels */
-      --muted: #4a4a4a; /* Darker gray for secondary text */
-      --accent-gold: #D4AF37; /* Perigold's soft metallic gold */
-      --accent-gold-dark: #B8972E; /* Slightly darker gold for hover */
-      --text-light: #2b2b2b; /* Darker text for contrast */
-      --text-dark: #111111; /* Retain for some contrast */
-      --radius: 8px; /* Smaller radius for a cleaner look */
-      --container-width: 1280px; /* Slightly wider for spaciousness */
+      --bg-light: #E8E3DB; /* Darker beige background inspired by Perigold */
+      --card-light: #F5F3EF; /* Light beige for cards, slightly off-white */
+      --card-dark: #EDEAE4; /* Subtle darker beige for panels */
+      --muted: #5C5A56; /* Warm gray for secondary text */
+      --accent-gold: #A68A64; /* Warm metallic gold inspired by Perigold */
+      --accent-gold-dark: #8B724C; /* Darker gold for hover effects */
+      --text-light: #3A3A3A; /* Dark gray for primary text */
+      --text-dark: #1F1F1F; /* Darker gray for contrast */
+      --radius: 8px; /* Consistent with original for clean look */
+      --container-width: 1280px; /* Spacious layout */
     }
 
     html, body { height: 100%; }
@@ -29,7 +29,7 @@
       -moz-osx-font-smoothing: grayscale;
       display: flex;
       justify-content: center;
-      padding: 60px 20px; /* Increased padding for airiness */
+      padding: 60px 20px;
     }
     .wrap { width: 100%; max-width: var(--container-width); }
 
@@ -41,7 +41,7 @@
       margin-bottom: 48px;
       flex-wrap: wrap;
       position: relative;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Subtle divider */
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       padding-bottom: 16px;
     }
     .header-left {
@@ -63,9 +63,9 @@
     }
     .header-title {
       font-family: 'Playfair Display', serif;
-      font-size: 2.4rem; /* Larger for prominence */
+      font-size: 2.4rem;
       font-weight: 700;
-      color: var(--text-light);
+      color: var(--text-dark);
       margin: 0;
       text-align: center;
       letter-spacing: 0.5px;
@@ -217,7 +217,7 @@
       gap: 32px;
     }
     .product-card {
-      background: var(--card-light); /* Clean white card */
+      background: var(--card-light);
       color: var(--text-light);
       border-radius: var(--radius);
       padding: 20px;
@@ -240,7 +240,7 @@
       object-fit: cover;
       border-radius: var(--radius);
       margin-bottom: 16px;
-      background: #f5f5f5;
+      background: var(--card-dark);
     }
     .product-card h3 {
       margin: 0 0 8px 0;
@@ -251,7 +251,7 @@
       letter-spacing: 0.3px;
     }
     .product-card .price {
-      font-family: 'Lato', sans-serif; /* Sans-serif for price */
+      font-family: 'Lato', sans-serif;
       font-weight: 600;
       color: var(--text-light);
       font-size: 1rem;
@@ -292,7 +292,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.4rem;
       font-weight: 700;
-      color: var(--text-light);
+      color: var(--text-dark);
       margin: 0 0 16px 0;
     }
 
@@ -469,6 +469,7 @@
       font-size: 1.2rem;
       margin: 0 0 12px 0;
       text-align: center;
+      color: var(--text-dark);
     }
     .modal .description {
       font-size: 14px;
@@ -726,10 +727,10 @@
         contactsContent: [
           "Latvia",
           "+37127552280"
-  ],
+        ],
         detailsContent: [
           "SIA GalaShop"
-            ],
+        ],
         paymentContent: [
           "Skaidrā naudā vai ar kredītkarti veikalā",
           "Bankas pārskaitījums (mēs sagatavosim rēķinu un nosūtīsim uz Jūsu noradīto e-pastu)"

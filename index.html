@@ -157,26 +157,26 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      width: 36px; /* Reverted to original size */
-      height: 36px; /* Reverted to original size */
+      width: 36px;
+      height: 36px;
       cursor: pointer;
-      padding: 8px; /* Reverted to original size */
+      padding: 8px;
     }
     .hamburger span {
       background: var(--text-light);
-      height: 2px; /* Reverted to original thickness */
-      margin: 4px 0; /* Reverted to original spacing */
-      border-radius: 1px; /* Reverted to original */
+      height: 2px;
+      margin: 4px 0;
+      border-radius: 1px;
       transition: all 0.3s ease;
     }
     .hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translate(6px, 6px); /* Adjusted for smaller size */
+      transform: rotate(45deg) translate(6px, 6px);
     }
     .hamburger.active span:nth-child(2) {
       opacity: 0;
     }
     .hamburger.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px); /* Adjusted for smaller size */
+      transform: rotate(-45deg) translate(6px, -6px);
     }
 
     .dropdown-menu {
@@ -593,19 +593,19 @@
         max-width: 120px;
       }
       .hamburger {
-        width: 32px; /* Reverted to original size */
-        height: 32px; /* Reverted to original size */
-        padding: 6px; /* Reverted to original size */
+        width: 32px;
+        height: 32px;
+        padding: 6px;
       }
       .hamburger span {
-        height: 2px; /* Reverted to original thickness */
-        margin: 3px 0; /* Reverted to original spacing */
+        height: 2px;
+        margin: 3px 0;
       }
       .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px); /* Adjusted for smaller size */
+        transform: rotate(45deg) translate(5px, 5px);
       }
       .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px); /* Adjusted for smaller size */
+        transform: rotate(-45deg) translate(5px, -5px);
       }
       .simpleCart_items table { font-size: 13px; }
       .simpleCart_items .simpleCart_remove { padding: 6px 10px; font-size: 13px; }
@@ -616,12 +616,14 @@
       .header-right { max-width: 220px; }
       .product-card img {
         aspect-ratio: 2 / 3;
+        max-height: 200px; /* Reduced size for mobile */
       }
       .modal img {
         aspect-ratio: 2 / 3;
+        max-height: 200px; /* Reduced size for mobile */
       }
       .banner img {
-        max-height: 250px;
+        max-height: 300px; /* Increased size for mobile */
         aspect-ratio: 16 / 9;
       }
       .top-bar {

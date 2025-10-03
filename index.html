@@ -41,7 +41,7 @@
       background: #1F1F1F;
       color: white;
       font-family: 'Playfair Display', serif;
-      font-size: 1rem; /* Reduced from 1.2rem */
+      font-size: 1rem;
       font-weight: 400;
       text-align: left;
       padding: 6px 0;
@@ -157,26 +157,26 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      width: 40px; /* Increased from 36px */
-      height: 40px; /* Increased from 36px */
+      width: 40px;
+      height: 40px;
       cursor: pointer;
-      padding: 10px; /* Increased from 8px */
+      padding: 10px;
     }
     .hamburger span {
       background: var(--text-light);
-      height: 3px; /* Increased from 2px for thicker stripes */
-      margin: 5px 0; /* Adjusted from 4px for spacing */
-      border-radius: 1.5px; /* Adjusted for thicker stripes */
+      height: 3px;
+      margin: 5px 0;
+      border-radius: 1.5px;
       transition: all 0.3s ease;
     }
     .hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translate(7px, 7px); /* Adjusted for larger size */
+      transform: rotate(45deg) translate(7px, 7px);
     }
     .hamburger.active span:nth-child(2) {
       opacity: 0;
     }
     .hamburger.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -7px); /* Adjusted for larger size */
+      transform: rotate(-45deg) translate(7px, -7px);
     }
 
     .dropdown-menu {
@@ -569,8 +569,19 @@
     }
     @media (max-width: 700px) { 
       .products-list { 
-        grid-template-columns: 1fr;
-        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .product-card { 
+        min-height: 300px;
+        padding: 12px;
+      }
+      .product-card img {
+        width: 100%;
+        aspect-ratio: 2 / 3;
+        max-height: 150px;
+        object-fit: cover;
+        border-radius: var(--radius);
       }
       header {
         flex-wrap: nowrap;
@@ -599,39 +610,54 @@
         max-width: 120px;
       }
       .hamburger {
-        width: 36px; /* Increased from 32px */
-        height: 36px; /* Increased from 32px */
-        padding: 8px; /* Increased from 6px */
+        width: 36px;
+        height: 36px;
+        padding: 8px;
       }
       .hamburger span {
-        height: 3px; /* Increased from 2px for thicker stripes */
-        margin: 4px 0; /* Adjusted from 3px for spacing */
+        height: 3px;
+        margin: 4px 0;
       }
       .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px); /* Adjusted for larger size */
+        transform: rotate(45deg) translate(6px, 6px);
       }
       .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px); /* Adjusted for larger size */
+        transform: rotate(-45deg) translate(6px, -6px);
       }
-      .simpleCart_items table { font-size: 13px; }
-      .simpleCart_items .simpleCart_remove { padding: 6px 10px; font-size: 13px; }
-      .dropdown-menu { left: 12px; }
-      .lang-selector .lang-btn { padding: 6px 10px; font-size: 13px; }
-      .lang-dropdown { min-width: 100px; }
-      .phone-number { font-size: 13px; }
-      .header-right { max-width: 220px; }
-      .product-card img {
-        aspect-ratio: 2 / 3;
+      .simpleCart_items table { 
+        font-size: 13px; 
+      }
+      .simpleCart_items .simpleCart_remove { 
+        padding: 6px 10px; 
+        font-size: 13px; 
+      }
+      .dropdown-menu { 
+        left: 12px; 
+      }
+      .lang-selector .lang-btn { 
+        padding: 6px 10px; 
+        font-size: 13px; 
+      }
+      .lang-dropdown { 
+        min-width: 100px; 
+      }
+      .phone-number { 
+        font-size: 13px; 
+      }
+      .header-right { 
+        max-width: 220px; 
       }
       .modal img {
         aspect-ratio: 2 / 3;
+        max-height: 150px;
+        width: 100%;
       }
       .banner img {
         max-height: 250px;
         aspect-ratio: 16 / 9;
       }
       .top-bar {
-        font-size: 0.8rem; /* Reduced from 0.9rem */
+        font-size: 0.8rem;
         padding: 4px 0;
       }
       .top-bar span {
@@ -753,12 +779,10 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/simplecartjs/3.0.5/simplecart.min.js"></script>
   <script>
-    // Генерация простого 6-значного ID заказа
     function generateSimpleOrderId() {
       return Math.floor(100000 + Math.random() * 900000).toString();
     }
 
-    // Объект переводов с данными о товарах
     const translations = {
       lv: { 
         title: "RED", 
@@ -816,7 +840,7 @@
         emptyCart: "Очистить корзину", 
         deliveryTitle: "Доставка",
         venipak: "Venipak (1–3 рабочих дня, 4.00 EUR)", 
-        pickup: "Самовывоз в Иманте  (БЕСПЛАТНО)", 
+        pickup: "Самовывоз в Иманте (БЕСПЛАТНО)", 
         pickupOption: "Самовывоз в Марупе",
         chooseLocker: "Выберите пакомат:",
         orderTitle: "Оформить заказ", 
@@ -860,7 +884,6 @@
       }
     };
 
-    // Загрузка пакоматов
     function loadLockers(lang) {
       const jsonFile = 'venipak-points.json';
       const select = $('#locker-select');
@@ -878,7 +901,6 @@
       });
     }
 
-    // Установка языка и обновление текстов
     function setLanguage(lang) {
       const t = translations[lang];
       $('#cart-title').text(t.cartTitle);
@@ -922,7 +944,6 @@
         $paymentContent.append(`<p>${text}</p>`);
       });
 
-      // Загружаем товары для текущего языка
       loadProducts(lang);
       $('#product-modal .add-btn').text(t.addToCart);
 
@@ -931,10 +952,9 @@
       $('html').attr('lang', lang);
     }
 
-    // Загрузка товаров
     function loadProducts(lang) {
       const list = $('#products-list');
-      list.empty(); // Очищаем список перед загрузкой
+      list.empty();
       translations[lang].products.forEach(p => {
         list.append(`
           <div class="product-card simpleCart_shelfItem" data-description="${p.description}">
@@ -952,10 +972,8 @@
     }
 
     $(function() {
-      // Инициализация страницы с латышским языком
       setLanguage('lv');
 
-      // Обработчик для отображения выпадающего меню языков
       $('.lang-selector').on('mouseenter', function() {
         $('.lang-dropdown').show();
       });
@@ -973,7 +991,6 @@
         }
       });
 
-      // Обработчик для гамбургер-меню
       $('.hamburger').on('click', function() {
         $(this).toggleClass('active');
         $('.dropdown-menu').toggleClass('active');
@@ -988,7 +1005,6 @@
         $('.hamburger').addClass('active');
       });
 
-      // Закрытие меню при клике вне его
       $(document).on('click', function(e) {
         if (!$(e.target).closest('.hamburger, .dropdown-menu').length) {
           $('.hamburger').removeClass('active');
@@ -1000,7 +1016,6 @@
         }
       });
 
-      // Настройка корзины
       simpleCart({
         cartStyle: "table",
         currency: "EUR",
@@ -1029,7 +1044,6 @@
         ]
       });
 
-      // Обработчик выбора доставки
       $('input[name="delivery"]').on('change', function() {
         const deliveryType = $(this).val();
         const select = $('#locker-select');
@@ -1045,7 +1059,6 @@
         updateCartTotal();
       });
 
-      // Обновление общей суммы корзины
       function updateCartTotal() {
         let itemsTotal = parseFloat(simpleCart.total()) || 0;
         let deliveryCost = 0;
@@ -1063,7 +1076,6 @@
         $('.simpleCart_total').text(totalWithDelivery);
       }
 
-      // Обработчики для изменения количества товаров
       $(document).on('click', '.increment', function() {
         const id = $(this).data('id');
         const item = simpleCart.find(id);
@@ -1096,7 +1108,6 @@
 
       simpleCart.bind('update', updateCartTotal);
 
-      // Обработка отправки формы заказа
       $('#orderForm').on('submit', function(e) {
         e.preventDefault();
         const lang = $('#current-lang').text().toLowerCase();
@@ -1184,7 +1195,6 @@
         });
       });
 
-      // Обработка модального окна для товаров
       const modal = $('#product-modal');
       const confirmationModal = $('#order-confirmation-modal');
       const closeBtn = $('.close');
@@ -1212,7 +1222,6 @@
         modal.show();
       });
 
-      // Закрытие модальных окон
       closeBtn.on('click', function() {
         modal.hide();
         confirmationModal.hide();

@@ -157,26 +157,26 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      width: 36px;
-      height: 36px;
+      width: 36px; /* Reverted to original size */
+      height: 36px; /* Reverted to original size */
       cursor: pointer;
-      padding: 8px;
+      padding: 8px; /* Reverted to original size */
     }
     .hamburger span {
       background: var(--text-light);
-      height: 2px;
-      margin: 4px 0;
-      border-radius: 1px;
+      height: 2px; /* Reverted to original thickness */
+      margin: 4px 0; /* Reverted to original spacing */
+      border-radius: 1px; /* Reverted to original */
       transition: all 0.3s ease;
     }
     .hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translate(6px, 6px);
+      transform: rotate(45deg) translate(6px, 6px); /* Adjusted for smaller size */
     }
     .hamburger.active span:nth-child(2) {
       opacity: 0;
     }
     .hamburger.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px);
+      transform: rotate(-45deg) translate(6px, -6px); /* Adjusted for smaller size */
     }
 
     .dropdown-menu {
@@ -250,20 +250,20 @@
 
     .products-list {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
+      grid-template-columns: repeat(4, 1fr); /* Изменено: с 3 на 4 колонки */
+      gap: 20px; /* Изменено: уменьшен gap с 32px до 20px для компактности */
     }
     .product-card {
       background: var(--card-light);
       color: var(--text-light);
       border-radius: var(--radius);
-      padding: 20px;
+      padding: 16px; /* Изменено: уменьшен padding с 20px до 16px */
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      min-height: 480px;
+      min-height: 380px; /* Изменено: уменьшена высота с 480px до 380px */
       cursor: pointer;
       position: relative;
     }
@@ -475,7 +475,7 @@
       padding: 24px;
       border-radius: var(--radius);
       width: 80%;
-      max-width: 400px; /* Reduced from 600px (600 / 1.5) */
+      max-width: 600px;
       color: var(--text-light);
       position: relative;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -494,7 +494,7 @@
       color: var(--accent-gold);
     }
     .modal img {
-      width: 70%; /* Maintains proportional scaling */
+      width: 70%;
       aspect-ratio: 2 / 3;
       object-fit: cover;
       border-radius: var(--radius);
@@ -561,11 +561,17 @@
     }
 
     @media (max-width: 1100px) { 
-      .products-list { grid-template-columns: repeat(2, 1fr); } 
+      .products-list { 
+        grid-template-columns: repeat(2, 1fr); /* Оставлено 2 для планшетов, но можно изменить на 3, если нужно */
+        gap: 20px; /* Изменено: синхронизировано с основным gap */
+      } 
       .header-right { max-width: 320px; }
     }
     @media (max-width: 700px) { 
-      .products-list { grid-template-columns: 1fr; }
+      .products-list { 
+        grid-template-columns: 1fr; /* Оставлено 1 для мобильных */
+        gap: 20px; /* Изменено: синхронизировано */
+      }
       header {
         flex-wrap: nowrap;
         gap: 12px;
@@ -593,19 +599,19 @@
         max-width: 120px;
       }
       .hamburger {
-        width: 32px;
-        height: 32px;
-        padding: 6px;
+        width: 32px; /* Reverted to original size */
+        height: 32px; /* Reverted to original size */
+        padding: 6px; /* Reverted to original size */
       }
       .hamburger span {
-        height: 2px;
-        margin: 3px 0;
+        height: 2px; /* Reverted to original thickness */
+        margin: 3px 0; /* Reverted to original spacing */
       }
       .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+        transform: rotate(45deg) translate(5px, 5px); /* Adjusted for smaller size */
       }
       .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
+        transform: rotate(-45deg) translate(5px, -5px); /* Adjusted for smaller size */
       }
       .simpleCart_items table { font-size: 13px; }
       .simpleCart_items .simpleCart_remove { padding: 6px 10px; font-size: 13px; }
@@ -631,18 +637,11 @@
       .top-bar span {
         margin-left: 12px;
       }
-      .modal-content {
-        max-width: 300px; /* Adjusted for mobile */
-        width: 90%; /* Ensures it fits within smaller screens */
-      }
-      .modal img {
-        width: 70%; /* Maintains proportional scaling */
-        aspect-ratio: 2 / 3;
-      }
     }
   </style>
 </head>
 <body>
+  <!-- Остальной HTML-код остаётся без изменений (header, main, модальные окна, скрипты) -->
   <div class="wrap">
     <div class="top-bar"><span>Welcome to the GalaShop</span></div>
     <header>
@@ -807,7 +806,8 @@
         products: [
           {name: "Rose", price: "25.00", img: "photo/200.jpg", description: "Rose"},
           {name: "Peony", price: "20.00", img: "photo/11E.jpg", description: "Peony"},
-          {name: "Lotos", price: "30.00", img: "photo/15E1.jpg", description: "Lotos"}
+          {name: "Lotos", price: "30.00", img: "photo/15E1.jpg", description: "Lotos"},
+          {name: "Wild Rose", price: "35.00", img: "photo/10.jpg", description: "Wild Rose"}
         ]
       },
       ru: { 
@@ -855,11 +855,13 @@
         products: [
           {name: "Rose", price: "25.00", img: "photo/200.jpg", description: "Роза"},
           {name: "Peony", price: "20.00", img: "photo/11E.jpg", description: "Пеон"},
-          {name: "Lotos", price: "30.00", img: "photo/15E1.jpg", description: "Лотос"}
+          {name: "Lotos", price: "30.00", img: "photo/15E1.jpg", description: "Лотос"},
+          {name: "Wild Rose", price: "35.00", img: "photo/10.jpg", description: "Дикая роза"}
         ]
       }
     };
 
+    // ... (остальной JavaScript-код без изменений, включая функции loadLockers, setLanguage, loadProducts и обработчики событий)
     // Загрузка пакоматов
     function loadLockers(lang) {
       const jsonFile = 'venipak-points.json';

@@ -170,13 +170,13 @@
       transition: all 0.3s ease;
     }
     .hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translate(7px, 7px);
+      transform: rotate(45deg) translate(6px, 6px);
     }
     .hamburger.active span:nth-child(2) {
       opacity: 0;
     }
     .hamburger.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -7px);
+      transform: rotate(-45deg) translate(6px, -6px);
     }
 
     .dropdown-menu {
@@ -587,9 +587,10 @@
         flex-wrap: nowrap;
         gap: 12px;
         justify-content: center;
-        padding-bottom: 12px;
+        padding-bottom: 8px;
         padding-left: 12px;
         padding-right: 12px;
+        margin-bottom: 0;
       }
       .header-title {
         font-size: 2.4rem;
@@ -610,19 +611,19 @@
         max-width: 120px;
       }
       .hamburger {
-        width: 36px;
-        height: 36px;
-        padding: 8px;
+        width: 30px;
+        height: 30px;
+        padding: 6px;
       }
       .hamburger span {
-        height: 3px;
-        margin: 4px 0;
+        height: 2px;
+        margin: 3px 0;
       }
       .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px);
+        transform: rotate(45deg) translate(5px, 5px);
       }
       .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
+        transform: rotate(-45deg) translate(5px, -5px);
       }
       .simpleCart_items table { 
         font-size: 13px; 
@@ -652,8 +653,11 @@
         max-height: 150px;
         width: 100%;
       }
+      .banner {
+        margin-bottom: 8px;
+      }
       .banner img {
-        max-height: 250px;
+        max-height: 200px;
         aspect-ratio: 16 / 9;
       }
       .top-bar {
